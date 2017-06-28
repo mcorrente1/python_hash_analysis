@@ -36,12 +36,17 @@ def get_repeat_plot(fileName, radix,modulus):
 
 
 def test_modulus_radix_pairs(fileName, outFileName, moduli, radices): 
-	fig, axis = plt.subplots()
-	axis.set_ylim(0,10)
+	plt.title("Table Index vs. Size of Chain for " + fileName)
+	ax = plt.subplot()
+	max_repeat = 0
 	for modulus in moduli:
 		for radix in radices:
 			indices, repeats = get_repeat_plot(fileName, radix, modulus)
-			plt.plot(indices, repeats, label='Radix:' + str(radix) + '/Modulus:'  + str(modulus))
+			for r in repeats:
+				if r > max_repeat:
+					max_repeat = r
+			ax.plot(indices, repeats,' o', label='Radix:' + str(radix) + '/Modulus:'  + str(modulus))
+	ax.set_ylim(0,max_repeat+max_repeat*0.1)
 	legend = plt.legend(loc='upper center', shadow=True)
 	plt.savefig(outFileName)
 	plt.show()
@@ -49,3 +54,8 @@ def test_modulus_radix_pairs(fileName, outFileName, moduli, radices):
 radices = [128]
 moduli = [32, 127, 97]
 test_modulus_radix_pairs('dataFiles/5lw-s.dat', 'plots/5lw-s-plot.png', moduli, radices)
+
+
+radices = [138]
+moduli = [132, 2027, 307]
+test_modulus_radix_pairs('dataFiles/5lw-m.dat', 'plots/5lw-m-plot.png', moduli, radices)
