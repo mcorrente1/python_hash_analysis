@@ -2,7 +2,6 @@
    A program to test hash function variations
 '''
 import Hash
-from Hash import *
 
 def testHash(radix, modulus, fName):
     print "\n"
