@@ -42,14 +42,19 @@ value 18, rather than seeing it was mapped to 11 times since ten of those mappin
 	The third plot shows the clustering of the modulus value 127.
 		Note how there are fewer clusters each of greater or equal size than the clusters in the third plot.
 		This caused multiple keys to the same hash values making it slightly less efficient.
-![Figure A. ](./plots/5lw-s-plot.png)
+
+###### Figure A
+![ alt text ](./plots/5lw-s-plot.png)
 
 
+###### Figure B 
+![ alt text ](./plots/5lw-m-plot.png)
 
 
-![Figure B. ](./plots/5lw-m-plot.png)
+###### Figure C
+![ alt text](./plots/5lw-plot.png)
 
-![Figure C. ](./plots/5lw-plot.png)
 
-![Figure D. ](./plots/wordList-plot.png)
+###### Figure D
+![alt text ](./plots/wordList.png)
 
