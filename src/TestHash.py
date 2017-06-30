@@ -15,4 +15,5 @@ def testHash(radix, modulus, fName):
             if (word != ''):
                 print('{0:10s} {1:8d}'.format(word, hash(word, radix, modulus)))
 
+
 testHash(128, 31, "../dataFiles/wordList.txt")
