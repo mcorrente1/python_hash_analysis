@@ -3,9 +3,7 @@ import matplotlib.pyplot as plt
 import time
 
 def get_repeat_plot(fileName, radix,modulus):
-	radix = 128
 	n =  0
-
 	file = open(fileName)
 	lines = file.read().strip().split('\n')
 	words = []
