@@ -23,38 +23,36 @@ value 18, rather than seeing it was mapped to 11 times since ten of those mappin
 
 
 ### Visualization
-	The plot generated helps visualize the clustering that occurs from the varying radix-modulus pairings on the same dataset.  
-	The y-axis is the number of collisions while the x-axis is the index within the table.
-	Each point is an index-collision pairing. The points can also be thought of as each
-	length of the chain at each index.
+The plot generated helps visualize the clustering that occurs from the varying radix-modulus pairings on the same dataset.  
+The y-axis is the number of collisions while the x-axis is the index within the table.
+Each point is an index-collision pairing. The points can also be thought of as each
+length of the chain at each index.
 
-#### Figure A.
-	The 5lw-s dataset contains 12 keys. Choosing the radix as a power of 2, let the radix be 128.
-	The varying effeciency for the moduli values (32, 127, 97) can be seen in the plot below.
+#### Figure A
+	The varying effeciency for the radices 128 and 256 and the moduli values (32, 127, 97) can be seen in the plot below.
+	Considering the first radix 128:
 	The first plot shows the clustering of the modulus value 32. 
 		The first 6 words are mapped to 19 and the remaining 6 are mapped to 20.
 		This is very inefficient because the cluster count is only 2 and each cluster size is 6.
+	The second plot shows the clustering of the modulus value 127.
+		Note how there are fewer clusters each of greater or equal size than the clusters in the third plot.
+		The number of keys hashed to the same value was less than modulus 32
 	The third plot shows the clustering of the modulus value 97.
 		Notice how the amount of clusters is equal to the amount of keys. This is very efficient because 
 		each unique key is mapped to a unique index.
 	One would imagine that based on intuition that increasing the modulus size will improve effieciency 
 	and decrease the amount of collisions. However the middle plot acts as counter evidence.
-	The third plot shows the clustering of the modulus value 127.
-		Note how there are fewer clusters each of greater or equal size than the clusters in the third plot.
-		This caused multiple keys to the same hash values making it slightly less efficient.
 
-###### Figure A
-![ alt text ](./plots/5lw-s-plot.png)
+
+![ alt text ](./plots/5lwsplot.png)
 
 
 ###### Figure B 
 ![ alt text ](./plots/5lw-m-plot.png)
 
 
+
+
 ###### Figure C
-![ alt text](./plots/5lw-plot.png)
-
-
-###### Figure D
 ![alt text ](./plots/wordList.png)
 
