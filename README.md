@@ -28,6 +28,8 @@ The y-axis is the number of collisions while the x-axis is the index within the 
 Each point is an index-collision pairing. The points can also be thought of as each
 length of the chain at each index.
 
+
+
 #### Figure A
 	The varying effeciency for the radices 128 and 256 and the moduli values (32, 127, 97) can be seen in the plot below.
 	Considering the first radix 128:
@@ -43,16 +45,23 @@ length of the chain at each index.
 	One would imagine that based on intuition that increasing the modulus size will improve effieciency 
 	and decrease the amount of collisions. However the middle plot acts as counter evidence.
 
-
-![ alt text ](./plots/5lwsplot.png)
-
-
-###### Figure B 
-![ alt text ](./plots/5lw-m-plot.png)
+<img src= ./plots/5lwsplot.png width='1080'>
 
 
+#### Importance of Radix and Modulus Choice
+Each character string of length n can be thought of as an n-1 degree polynomial, and by using Horner's rule it is easy to see how a hash value can be generated. So, for strings that end in similar polynomial sequences will often be mapped to the same value if the modulus and radix pair is not chosen wisely. 
+This can be seen in the following plot. 
+The left column demonstrates the clustering seen from choosing a radix that is a prime number.
+The modulus value 9000 was chosen because it is only slightly larger than the key set size of 8938 . Note that it is not prime
+However, when choosing the prime 8893 one can assume that there must be some collisions since the table size is smaller than the key size, which is true. Yet, because this number is a prime this allowed for that hash values to be more evenly distributed among the table than the non-prime 9000. This can be seen by looking at the number of collisions that occurred at each index. And for the value 8893, although it is less than the table size performed slighlty better by having collision heights of 6 as compared to 8. This is a minor difference but it can be used to illustrate the importance of prime modulo values.
+
+In the same figure, the importance of choosing a correct radix can be seen. Radices that are prime, or multiples of 2 are considered good 
+choices. So to illustrate this the right column tests the same modulus values as before but uses 999 because it is a nonprime divisible 
+by 3. As you can see from the top plot, this did not seem to affect the clustering too much, but it still performed slightly worse than 
+using the radix 256. But, in the graph below, when choosing the non-prime modulus 9000, the affect the radix has on the clustering can be 
+seen.
+![ alt text ](./plots/5lw_primeplot.png)
 
 
-###### Figure C
-![alt text ](./plots/wordList.png)
+
 
