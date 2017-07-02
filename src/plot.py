@@ -135,16 +135,16 @@ test_modulus_radix_pairs_hist('../dataFiles/5lw-m.dat', '../plots/5lwmplot.png',
 
 
 radices = [128, 256]
+moduli = [512, 2048, 5555, 1997]
+test_modulus_radix_pairs_hist('../dataFiles/5lw.dat', '../plots/5lwplot.png', moduli, radices)
+plot_histogram_hash('../dataFiles/5lw.dat', '../plots/5lwplot2.png', moduli, radices)
+
+radices = [128, 256]
 moduli = [32, 127, 97]
 test_modulus_radix_pairs_hist('../dataFiles/5lw-s.dat', '../plots/5lwsplot.png', moduli, radices)
 plot_histogram_hash('../dataFiles/5lw-s.dat', '../plots/5lwsplot2.png', moduli, radices)
 '''
 
-radices = [128, 256]
-moduli = [512, 2048, 5555, 1997]
-test_modulus_radix_pairs_hist('../dataFiles/5lw.dat', '../plots/5lwplot.png', moduli, radices)
-plot_histogram_hash('../dataFiles/5lw.dat', '../plots/5lwplot2.png', moduli, radices)
-
-radices = [256, 1997] # prime and power of 2
+radices = [256, 999] # prime and power of 2
 moduli = [8893, 9000]
 test_modulus_radix_pairs_hist('../dataFiles/5lw.dat', '../plots/5lw_primeplot.png', moduli, radices)
