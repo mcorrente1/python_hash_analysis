@@ -126,18 +126,16 @@ def plot_histogram_hash(fileName, outFileName, moduli, radices):
 	plt.savefig(outFileName)
 	plt.show()
 
-#radices = [128, 256]
-#moduli = [127, 123, 213, 255]
-#test
-
-#test_modulus_radix_pairs_hist('../dataFiles/5lw-m.dat', '../plots/5lw-m-plot2.png', moduli, radices)
+radices = [128, 256]
+moduli = [127, 123, 213, 255]
+test_modulus_radix_pairs_hist('../dataFiles/5lw-m.dat', '../plots/5lwmplot.png', moduli, radices)
 
 
 
-#radices = [128, 256]
-#moduli = [512, 2048, 5555, 1997]
-#test_modulus_radix_pairs_hist('../dataFiles/5lw.dat', '../plots/5lwplot.png', moduli, radices)
-#plot_histogram_hash('../dataFiles/5lw.dat', '../plots/5lwplot2.png', moduli, radices)
+radices = [128, 256]
+moduli = [512, 2048, 5555, 1997]
+test_modulus_radix_pairs_hist('../dataFiles/5lw.dat', '../plots/5lwplot.png', moduli, radices)
+plot_histogram_hash('../dataFiles/5lw.dat', '../plots/5lwplot2.png', moduli, radices)
 
 
 radices = [128, 256]
