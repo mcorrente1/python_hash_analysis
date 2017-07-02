@@ -117,15 +117,23 @@ def plot_histogram_hash(fileName, outFileName, moduli, radices):
 			ax = plt.subplot(len(moduli), len(radices), plot_num)
 			if plot_num == 1:  # title on first plot
 				ax.set_title("Key Clustering for " + fileName + " with " + str(len(hashes)) + " Keys ")
-			ax.hist(hashes)
+			ax.hist(hashes, label='Radix:' + str(radix) + '/Modulus:' + str(modulus))
 			ax.legend(loc='upper left')
 			plot_num += 1
 
-	ax.set_ylabel('Key count')
-	ax.set_xlabel('Table Index')
+	ax.set_ylabel('Frequency')
+	ax.set_xlabel('Hash Value')
 	plt.savefig(outFileName)
 	plt.show()
 
+#radices = [128, 256]
+#moduli = [127, 123, 213, 255]
+#test
+_modulus_radix_pairs_hist('../dataFiles/5lw-m.dat', '../plots/5lw-m-plot2.png', moduli, radices)
+
+
+
 radices = [128, 256]
-moduli = [127, 123, 213, 255]
-test_modulus_radix_pairs_hist('../dataFiles/5lw-m.dat', '../plots/5lw-m-plot2.png', moduli, radices)
+moduli = [512, 2048, 5555, 1997]
+test_modulus_radix_pairs_hist('../dataFiles/5lw.dat', '../plots/5lwplot.png', moduli, radices)
+plot_histogram_hash('../dataFiles/5lw.dat', '../plots/5lwplot2.png', moduli, radices)
