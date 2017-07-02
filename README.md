@@ -31,8 +31,8 @@ length of the chain at each index.
 
 
 #### Figure A
-	The varying effeciency for the radices 128 and 256 and the moduli values (32, 127, 97) can be seen in the plot below.
-	Considering the first radix 128:
+	The varying efficiency for the radices 128 and 256 and the moduli values (32, 127, 97) can be seen in the plot below.
+	Considering the first radix 128 in the left column:
 	The first plot shows the clustering of the modulus value 32. 
 		The first 6 words are mapped to 19 and the remaining 6 are mapped to 20.
 		This is very inefficient because the cluster count is only 2 and each cluster size is 6.
@@ -40,10 +40,18 @@ length of the chain at each index.
 		Note how there are fewer clusters each of greater or equal size than the clusters in the third plot.
 		The number of keys hashed to the same value was less than modulus 32
 	The third plot shows the clustering of the modulus value 97.
-		Notice how the amount of clusters is equal to the amount of keys. This is very efficient because 
+		Notice how the amount of clusters is equal to the amount of keys. This is very efficient because
 		each unique key is mapped to a unique index.
-	One would imagine that based on intuition that increasing the modulus size will improve effieciency 
-	and decrease the amount of collisions. However the middle plot acts as counter evidence.
+	Considering the second radix 256 in the right column:
+	The first plot provided the exact same results as its radix 128 counterpart, so choosing a different radix provided
+	    no benefit or loss of efficiency in this case.
+	The second plot does better than its radix 128 counterpart and ended up having no collisions.
+	The third plot did just as good as its radix 128 counterpart and ended up having no collisions as well.
+	One would imagine that based on intuition that increasing the modulus size will improve efficiency
+	and decrease the amount of collisions, however, the middle plot acts as counter evidence to that point.
+	Selecting a larger radix in these plots only improved efficiency in the second scenario by eliminating all collisions
+	and provided no improvement in the other two scenarios where collisions were the same. A more in depth analysis of radix
+	selection will be provided in the following section.
 
 <img src= ./plots/5lwsplot.png width='1080'>
 
